@@ -1,0 +1,39 @@
+Assignment 7: Error Handling
+
+This assignment will require the development of a specialized exception class and a class that throw this exception. 
+
+Description Create a new Eclipse project, LastNameFirst07. Four classes will need to be implemented, DiscountException, 
+Item, InvoiceItem, and Invoice. Additionally, a JUnit test will be required for the Invoice, this test should verify the 
+required exceptions are thrown when appropriate. 
+
+DiscountException A specialized exception class. This class defines one new property, the InvoiceItem that caused the 
+exception to be thrown.
+
+Item Represents an item that is maintained in the inventory and available for sale. The Item is immutable and has three properties:
+
+Description, a discription of the item
+Price, the item's prices (in cents)
+Stock keeping unit (SKU), an numeric identifier for the item.
+InvoiceItem Represents an item on an invoice. The InvoiceItem is immutable and has the following properties:
+
+Item, the item
+Quantity, the quanity of the item being purchased
+Discount, the discount (percentage) given on this particular item
+The InvoiceItem class also provides methods for getting the total value of the item (quantity * price), 
+the total discount (quantity * price * discount), and the net value of the item. 
+
+Invoice The Invoice is a collection of InvoiceItems. Methods must be provided to:
+
+Add and remove InvoiceItems. An attempt to add a null item should raise an IllegalArgumentException.
+Set and get the invoice discount, a discount applied to the invoice as a whole. An attempt to set the discount to a 
+negative value should raise an IllegalArgumentException.
+Process the invoice, prints the invoice. Additionally, it is invalid for an invoice to have both item discounts and an 
+invoice discount, this method should detect this and throw a DiscountException.
+InvoiceTest The invoice test should verify that the proper exceptions are thrown at the proper times. 
+
+Questions What would the last regular assignment be without questions? Answer the following questions and place in answer.txt 
+The answer.txt file should be created in the project src directory. What was experiences using Eclipse or your tool of choice 
+for performing the assignments. 
+
+What to turn in Use the eclipse File->Export->Archive file menu to export the project as a zip file. 
+Submit this file per the assignment submission instructions.
