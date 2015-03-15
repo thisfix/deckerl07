@@ -1,5 +1,6 @@
 Assignment 7: Error Handling
 
+
 This assignment will require the development of a specialized exception class and a class that throw this exception. 
 
 Description Create a new Eclipse project, LastNameFirst07. Four classes will need to be implemented, DiscountException, 
