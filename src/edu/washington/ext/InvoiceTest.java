@@ -8,16 +8,37 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * The Class InvoiceTest.
+ */
 public class InvoiceTest {
 
+	/** The item1. */
 	Item item1 = new Item("USB 3.0 to USB-C cable", 4500, 11451);
+	
+	/** The item2. */
 	Item item2 = new Item("USB 3.0 to Firewire", 3500, 11452);
+	
+	/** The item3. */
 	Item item3 = new Item("USB 3.0 to Thunderbolt", 4000, 11453);
+	
+	/** The invoice item1. */
 	InvoiceItem invoiceItem1 = new InvoiceItem(item1, 7, 10);
+	
+	/** The invoice item2. */
 	InvoiceItem invoiceItem2 = new InvoiceItem(item2, 1, 0);
+	
+	/** The invoice item3. */
 	InvoiceItem invoiceItem3 = new InvoiceItem(item3, 1, 0);
+	
+	/** The invoice items. */
 	List<InvoiceItem> invoiceItems = new ArrayList<InvoiceItem>();
 	
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		invoiceItems.add(invoiceItem1);
@@ -25,6 +46,9 @@ public class InvoiceTest {
 		invoiceItems.add(invoiceItem3);
 	}
 
+	/**
+	 * Test invoice.
+	 */
 	@Test
 	public void testInvoice() {
 		try {
@@ -34,6 +58,9 @@ public class InvoiceTest {
 		}
 	}
 
+	/**
+	 * Test add invoice items.
+	 */
 	@Test
 	public void testAddInvoiceItems() {
 		Invoice myInvoice = new Invoice();
@@ -44,6 +71,9 @@ public class InvoiceTest {
 		}
 	}
 
+	/**
+	 * Test remove invoice items.
+	 */
 	@Test
 	public void testRemoveInvoiceItems() {
 		Invoice myInvoice = new Invoice();
@@ -55,6 +85,9 @@ public class InvoiceTest {
 		}
 	}
 	
+	/**
+	 * Test invalid null add invoice items.
+	 */
 	@Test
 	public void testInvalidNullAddInvoiceItems() {
 		Invoice myInvoice = new Invoice();
@@ -67,6 +100,9 @@ public class InvoiceTest {
 		fail ("testInvalidNullAddInvoiceItems() should have thrown an IllegalArgumentException");
 	}
 
+	/**
+	 * Test invalid null remove invoice items.
+	 */
 	@Test
 	public void testInvalidNullRemoveInvoiceItems() {
 		Invoice myInvoice = new Invoice();
@@ -81,6 +117,9 @@ public class InvoiceTest {
 		
 	}
 
+	/**
+	 * Test set invoice discount.
+	 */
 	@Test
 	public void testSetInvoiceDiscount() {
 		Invoice myInvoice = new Invoice();
@@ -91,6 +130,9 @@ public class InvoiceTest {
 		}	
 	}
 	
+	/**
+	 * Test invalid negative set invoice discount.
+	 */
 	@Test
 	public void testInvalidNegativeSetInvoiceDiscount() {
 		Invoice myInvoice = new Invoice();
@@ -103,6 +145,9 @@ public class InvoiceTest {
 		fail ("testInvalidNegativeSetInvoiceDiscount() should have thrown an IllegalArgumentException");
 	}
 
+	/**
+	 * Test get invoice discount.
+	 */
 	@Test
 	public void testGetInvoiceDiscount() {
 		Invoice myInvoice = new Invoice();
@@ -115,6 +160,11 @@ public class InvoiceTest {
 		assertEquals(myInvoice.getInvoiceDiscount(),10,0);		
 	}
 
+	/**
+	 * Test item discount process the invoice.
+	 *
+	 * @throws DiscountException the discount exception
+	 */
 	@Test
 	public void testItemDiscountProcessTheInvoice() throws DiscountException {
 		Invoice myInvoice = new Invoice();
@@ -135,6 +185,11 @@ public class InvoiceTest {
 		
 	}
 
+	/**
+	 * Test invoice discount process the invoice.
+	 *
+	 * @throws DiscountException the discount exception
+	 */
 	@Test
 	public void testInvoiceDiscountProcessTheInvoice() throws DiscountException {
 		Invoice myInvoice = new Invoice();
@@ -147,6 +202,11 @@ public class InvoiceTest {
 		}
 	}
 
+	/**
+	 * Test invalid invoice discount process the invoice.
+	 *
+	 * @throws DiscountException the discount exception
+	 */
 	@Test
 	public void testInvalidInvoiceDiscountProcessTheInvoice() throws DiscountException {
 		Invoice myInvoice = new Invoice();
