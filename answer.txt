@@ -1,0 +1,9 @@
+Questions 
+What would the last regular assignment be without questions? 
+	I'm not sure - an anomaly.
+
+Answer the following questions and place in answer.txt 
+The answer.txt file should be created in the project src directory. 
+What was experiences using Eclipse or your tool of choice for performing the assignments.
+	I used Eclipse for performing the assignments.  The biggest plus for me was/is the price and secondarily the vast array
+	of plugins available.  After getting used to the tool, it is quite powerful.

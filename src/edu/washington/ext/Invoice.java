@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+
 /**
  * The Class Invoice.
  */
@@ -79,9 +80,12 @@ public class Invoice {
 	public void processTheInvoice() throws DiscountException{
 		for (int i=0; i<invoiceItems.size(); i++){
 			if (invoiceDiscount>0 && invoiceItems.get(i).getDiscount()>0){
-				throw new DiscountException();
+				throw new DiscountException(invoiceItems.get(i));
 			} else {
-				System.out.println(invoiceItems.get(i));
+				System.out.println("Invoice Item ["+invoiceItems.get(i)+"] valid");
+				System.out.println("Item description : "+invoiceItems.get(i).getItemDescription());
+				System.out.println("Item quantity : "+invoiceItems.get(i).getQuantity());
+				System.out.println("Item discount : "+invoiceItems.get(i).getDiscount());
 			}
 		}
 	}

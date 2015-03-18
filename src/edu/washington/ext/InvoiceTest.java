@@ -8,6 +8,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+
 /**
  * The Class InvoiceTest.
  */
@@ -95,6 +96,7 @@ public class InvoiceTest {
 			myInvoice.addInvoiceItems(null);
 		} catch (IllegalArgumentException e) {
 			// success [we expect an IllegalArgumentException]
+			System.out.println("Test successfully threw IllegalArgumentException --  Message: "+e.getMessage());
 			return;
 		}
 		fail ("testInvalidNullAddInvoiceItems() should have thrown an IllegalArgumentException");
@@ -111,6 +113,7 @@ public class InvoiceTest {
 			myInvoice.removeInvoiceItems(null);
 		} catch (IllegalArgumentException e) {
 			// success [we expect an IllegalArgumentException]
+			System.out.println("Test successfully threw IllegalArgumentException --  Message: "+e.getMessage());
 			return;
 		}
 		fail ("testInvalidNullRemoveInvoiceItems() should have thrown an IllegalArgumentException");
@@ -140,6 +143,7 @@ public class InvoiceTest {
 			myInvoice.setInvoiceDiscount(-10);
 		} catch (IllegalArgumentException e) {
 			// success [we expect an IllegalArgumentException]
+			System.out.println("Test successfully threw IllegalArgumentException --  Message: "+e.getMessage());
 			return;
 		}
 		fail ("testInvalidNegativeSetInvoiceDiscount() should have thrown an IllegalArgumentException");
@@ -180,7 +184,7 @@ public class InvoiceTest {
 		try {
 			myInvoice.processTheInvoice();
 		} catch (DiscountException e) {
-			fail (e.getMessage());
+			fail ("Invalid InvoiceItem: "+ e.getInvoiceItem() +" Message: "+e.getMessage());
 		}
 		
 	}
@@ -198,7 +202,7 @@ public class InvoiceTest {
 		try {
 			myInvoice.processTheInvoice();
 		} catch (DiscountException e) {
-			fail (e.getMessage());
+			fail ("Invalid InvoiceItem: "+ e.getInvoiceItem() +" Message: "+e.getMessage());
 		}
 	}
 
@@ -216,6 +220,7 @@ public class InvoiceTest {
 			myInvoice.processTheInvoice();
 		} catch (DiscountException e) {
 			// success [we expect an DiscountException]
+			System.out.println("Test successfully threw DiscountException -- Invalid InvoiceItem: "+ e.getInvoiceItem() +" Message: "+e.getMessage());
 			return;
 		}
 		fail ("testInvalidInvoiceDiscountProcessTheInvoice() should have thrown an DiscountException");

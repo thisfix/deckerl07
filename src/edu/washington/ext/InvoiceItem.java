@@ -1,5 +1,6 @@
 package edu.washington.ext;
 
+
 /**
  * The Class InvoiceItem.
  */
@@ -79,5 +80,14 @@ public final class InvoiceItem {
 	 */
 	public int getNetValueOfItem(){
 		return this.getTotalValueOfItem() - this.getTotalDiscount();
+	}
+	
+	/**
+	 * Gets the item description.
+	 *
+	 * @return the item description
+	 */
+	public String getItemDescription(){
+		return this.item.getDescription();
 	}
 }
