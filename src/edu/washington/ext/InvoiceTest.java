@@ -225,4 +225,13 @@ public class InvoiceTest {
 		}
 		fail ("testInvalidInvoiceDiscountProcessTheInvoice() should have thrown an DiscountException");
 	}
+	
+	/**
+	 * Exception.
+	 */
+	@Test(expected = IllegalArgumentException.class)
+	public void exception(){
+		Invoice myInvoice = new Invoice();
+		myInvoice.setInvoiceDiscount(-10);
+	}
 }

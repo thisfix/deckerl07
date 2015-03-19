@@ -18,7 +18,8 @@ public class DiscountException extends Exception {
 	 *
 	 * @param invoiceItem the invoice item
 	 */
-	DiscountException(InvoiceItem invoiceItem){
+	public DiscountException(InvoiceItem invoiceItem){
+		super("Item : "+invoiceItem.getItemDescription()+ " - discount not allowed");
 		this.invoiceItem = invoiceItem;
 	}
 	

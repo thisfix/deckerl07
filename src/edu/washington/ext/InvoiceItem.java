@@ -22,7 +22,7 @@ public final class InvoiceItem {
 	 * @param quantity the quantity
 	 * @param discount the discount
 	 */
-	InvoiceItem(Item item, int quantity, int discount){
+	public InvoiceItem(Item item, int quantity, int discount){
 		this.item = item;
 		this.quantity = quantity;
 		this.discount = discount;
@@ -70,7 +70,7 @@ public final class InvoiceItem {
 	 * @return the total discount
 	 */
 	public int getTotalDiscount(){
-		return this.getQuantity() * this.item.getPrice() * (this.getDiscount()/100);
+		return getTotalValueOfItem() * (this.getDiscount()/100);
 	}
 	
 	/**

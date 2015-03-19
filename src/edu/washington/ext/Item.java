@@ -22,7 +22,8 @@ public final class Item {
 	 * @param price the price
 	 * @param sku the sku
 	 */
-	Item(String description, int price, int sku){
+	public Item(String description, int price, int sku){
+		super();
 		this.description = description;
 		this.price = price;
 		this.sku = sku;
